@@ -7,101 +7,111 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             max-width: 8.5in;
             margin: 0 auto;
-            padding: 1in;
+            padding: 0.7in;
             color: #333;
             background: white;
+            font-size: 11px;
         }
         .header {
             text-align: center;
-            border-bottom: 3px solid #2c5aa0;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
         }
         .header h1 {
             color: #2c5aa0;
-            font-size: 24px;
+            font-size: 20px;
             margin: 0;
         }
         .header p {
             color: #666;
-            font-size: 14px;
-            margin: 5px 0 0 0;
+            font-size: 11px;
+            margin: 3px 0 0 0;
         }
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 18px;
         }
         .section h2 {
             color: #2c5aa0;
-            font-size: 18px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            font-size: 14px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
         }
         .section h3 {
             color: #4a4a4a;
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 12px;
+            margin-bottom: 6px;
         }
         .section h4 {
             color: #666;
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: 11px;
+            margin-bottom: 4px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 13px;
+            margin: 8px 0;
+            font-size: 10px;
         }
         table, th, td {
             border: 1px solid #ddd;
         }
         th {
             background-color: #f8f9fa;
-            padding: 10px;
+            padding: 6px;
             text-align: left;
             font-weight: bold;
             color: #2c5aa0;
         }
         td {
-            padding: 8px 10px;
+            padding: 5px 6px;
             vertical-align: top;
         }
         .highlight-box {
             background-color: #f8f9fa;
-            border-left: 4px solid #2c5aa0;
-            padding: 15px;
-            margin: 15px 0;
+            border-left: 3px solid #2c5aa0;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 10px;
         }
         .command-box {
             background-color: #f1f3f4;
             border: 1px solid #dadce0;
-            padding: 10px;
+            padding: 6px;
             font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 12px;
-            margin: 10px 0;
-            border-radius: 4px;
+            font-size: 9px;
+            margin: 6px 0;
+            border-radius: 3px;
         }
         ul, ol {
-            padding-left: 20px;
+            padding-left: 16px;
+            margin: 6px 0;
         }
         li {
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
         .footer {
-            margin-top: 40px;
+            margin-top: 20px;
             text-align: center;
-            font-size: 12px;
+            font-size: 9px;
             color: #666;
             border-top: 1px solid #e0e0e0;
-            padding-top: 15px;
+            padding-top: 8px;
+        }
+        .three-column {
+            display: flex;
+            gap: 12px;
+        }
+        .three-column > div {
+            flex: 1;
         }
         .two-column {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
         .two-column > div {
             flex: 1;
@@ -110,61 +120,65 @@
             body {
                 margin: 0;
                 padding: 0.5in;
+                font-size: 10px;
             }
             .section {
                 page-break-inside: avoid;
             }
+            @page {
+                size: letter;
+                margin: 0.5in;
+            }
+        }
+        .compact-list {
+            margin: 4px 0;
+            padding-left: 12px;
+        }
+        .compact-list li {
+            margin-bottom: 1px;
+            font-size: 10px;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>RemWaste QA Automation Test Plan</h1>
-        <p>Comprehensive UI and API Test Strategy Document</p>
         <p><strong>Author:</strong> Oluwatobi | <strong>Date:</strong> January 2025 | <strong>Version:</strong> 1.0</p>
-    </div>
-    <div class="section">
-        <h2>1. Executive Summary</h2>
-        <p>This document outlines the comprehensive test strategy for the RemWaste application, covering both UI and API automation testing. The framework implements industry-standard practices including Page Object Model (POM) architecture, API service layer design, and automated reporting capabilities.</p>
-        
-        <div class="highlight-box">
-            <strong>Key Objectives:</strong> Ensure robust functionality of the RemWaste application through automated UI and API testing, providing comprehensive coverage of user workflows and backend services.
-        </div>
+        <p>Comprehensive UI and API Test Strategy Document</p>
     </div>
 
     <div class="section">
-        <h2>2. Application Under Test</h2>
+        <h2>1. Executive Summary & Application Under Test</h2>
+        <p>This document outlines the comprehensive test strategy for the RemWaste application, covering both UI and API automation testing using industry-standard practices including Page Object Model (POM) architecture and API service layer design.</p>
+        
         <table>
             <tr>
-                <th width="25%">Component</th>
-                <th width="75%">Details</th>
+                <th width="20%">Component</th>
+                <th width="80%">Details</th>
             </tr>
             <tr>
-                <td><strong>Application Name</strong></td>
-                <td>RemWaste - Waste Management System</td>
+                <td><strong>Application</strong></td>
+                <td>RemWaste - Waste Management System | https://remwasteapp-frontend.onrender.com/</td>
             </tr>
             <tr>
-                <td><strong>Application URL</strong></td>
-                <td>https://remwasteapp-frontend.onrender.com/</td>
-            </tr>
-            <tr>
-                <td><strong>Core Functionality</strong></td>
+                <td><strong>Functionality</strong></td>
                 <td>User authentication, waste item management (CRUD operations), dashboard analytics</td>
             </tr>
             <tr>
-                <td><strong>Technology Stack</strong></td>
+                <td><strong>Technology</strong></td>
                 <td>React Frontend, RESTful API Backend, Web-based interface</td>
             </tr>
         </table>
     </div>
+
     <div class="section">
-        <h2>3. Test Coverage Areas</h2>
+        <h2>2. Test Coverage Areas</h2>
         
         <div class="two-column">
             <div>
-                <h3>3.1 UI Test Coverage (32 Test Cases)</h3>
+                <h3>2.1 UI Test Coverage (32 Test Cases)</h3>
                 <h4>Login Functionality (24 tests):</h4>
-                <ul>
+                <ul class="compact-list">
                     <li>Homepage verification and loading</li>
                     <li>Form validation (empty fields, invalid formats)</li>
                     <li>Authentication flows (valid/invalid credentials)</li>
@@ -175,26 +189,25 @@
                 </ul>
                 
                 <h4>Dashboard CRUD Operations (8 tests):</h4>
-                <ul>
+                <ul class="compact-list">
                     <li>Dashboard accessibility after login</li>
-                    <li>Create waste item functionality</li>
-                    <li>Update existing items</li>
-                    <li>Delete item operations</li>
+                    <li>Create/Update/Delete waste item functionality</li>
                     <li>Session continuity across operations</li>
+                    <li>Modal interactions and state management</li>
                 </ul>
             </div>
             
             <div>
-                <h3>3.2 API Test Coverage</h3>
+                <h3>2.2 API Test Coverage</h3>
                 <h4>Health & System Endpoints:</h4>
-                <ul>
+                <ul class="compact-list">
                     <li>API health status verification</li>
                     <li>System endpoint accessibility</li>
                     <li>Response time and performance checks</li>
                 </ul>
                 
                 <h4>Authentication API:</h4>
-                <ul>
+                <ul class="compact-list">
                     <li>User registration workflow</li>
                     <li>Login/logout functionality</li>
                     <li>Token validation and refresh</li>
@@ -202,215 +215,207 @@
                 </ul>
                 
                 <h4>Items CRUD API:</h4>
-                <ul>
-                    <li>Create new waste items</li>
-                    <li>Retrieve item lists and details</li>
-                    <li>Update item information</li>
-                    <li>Delete items with proper authorization</li>
+                <ul class="compact-list">
+                    <li>Create/Retrieve/Update/Delete waste items</li>
+                    <li>Authorization validation</li>
                     <li>Data validation and error scenarios</li>
                 </ul>
             </div>
         </div>
     </div>
+
     <div class="section">
-        <h2>4. Tools and Technology Stack</h2>
+        <h2>3. Tools & Technology Stack with Justification</h2>
         <table>
             <tr>
-                <th width="20%">Tool/Technology</th>
-                <th width="25%">Purpose</th>
-                <th width="55%">Justification</th>
+                <th width="15%">Tool</th>
+                <th width="20%">Purpose</th>
+                <th width="65%">Justification</th>
             </tr>
             <tr>
                 <td><strong>Cypress</strong></td>
-                <td>Test Automation Framework</td>
-                <td>Modern, developer-friendly tool with excellent debugging capabilities, built-in test runner, and comprehensive API testing support</td>
+                <td>Test Framework</td>
+                <td>Modern, developer-friendly tool with excellent debugging, built-in test runner, comprehensive API testing support</td>
             </tr>
             <tr>
-                <td><strong>JavaScript/Node.js</strong></td>
-                <td>Programming Language</td>
-                <td>Native language for Cypress, enables seamless integration with frontend technologies</td>
+                <td><strong>JavaScript</strong></td>
+                <td>Language</td>
+                <td>Native language for Cypress, seamless frontend integration, extensive ecosystem</td>
             </tr>
             <tr>
                 <td><strong>Page Object Model</strong></td>
                 <td>Design Pattern</td>
-                <td>Industry standard for maintainable and scalable test automation, promotes code reusability</td>
+                <td>Industry standard for maintainable/scalable automation, promotes code reusability and maintainability</td>
             </tr>
             <tr>
                 <td><strong>Mochawesome</strong></td>
-                <td>Test Reporting</td>
+                <td>Reporting</td>
                 <td>Generates comprehensive HTML reports with screenshots, videos, and detailed test results</td>
             </tr>
-            <tr>
-                <td><strong>Git/GitHub</strong></td>
-                <td>Version Control</td>
-                <td>Industry standard for source code management and collaboration</td>
-            </tr>
         </table>
     </div>
-    <div class="section">
-        <h2>5. Test Architecture</h2>
-        
-        <h3>5.1 UI Test Architecture</h3>
-        <ul>
-            <li><strong>Page Object Model Implementation:</strong> Separate page classes for LoginPage and DashboardPage containing element locators and actions</li>
-            <li><strong>Custom Commands:</strong> Reusable Cypress commands for common operations (login, data cleanup, modal assertions)</li>
-            <li><strong>Test Data Management:</strong> Centralized test data in fixtures for consistent test scenarios</li>
-        </ul>
 
-        <h3>5.2 API Test Architecture</h3>
-        <ul>
-            <li><strong>Service Layer Pattern:</strong> BaseApiService providing common HTTP methods, specialized services for different API domains</li>
-            <li><strong>Data Models:</strong> Centralized test data models for API requests and responses</li>
-            <li><strong>Response Validation:</strong> Comprehensive verification of API responses, status codes, and data integrity</li>
-        </ul>
-    </div>
     <div class="section">
-        <h2>6. Test Execution Instructions</h2>
+        <h2>4. Test Architecture & Execution Instructions</h2>
         
-        <h3>6.1 Environment Setup</h3>
-        <div class="command-box">
-# Clone repository<br>
+        <div class="two-column">
+            <div>
+                <h3>4.1 Architecture Overview</h3>
+                <h4>UI Test Architecture:</h4>
+                <ul class="compact-list">
+                    <li><strong>Page Object Model:</strong> LoginPage and DashboardPage classes with element locators and actions</li>
+                    <li><strong>Custom Commands:</strong> Reusable Cypress commands for common operations</li>
+                    <li><strong>Test Data Management:</strong> Centralized fixtures for consistent scenarios</li>
+                </ul>
+
+                <h4>API Test Architecture:</h4>
+                <ul class="compact-list">
+                    <li><strong>Service Layer:</strong> BaseApiService with specialized services for different domains</li>
+                    <li><strong>Data Models:</strong> Centralized test data models for requests/responses</li>
+                    <li><strong>Response Validation:</strong> Comprehensive API response verification</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>4.2 Environment Setup & Execution</h3>
+                <div class="command-box">
 git clone https://github.com/iDEVfrontend/RemWasteAutomationAssessment.git<br>
-cd RemWasteAutomationAssessment<br><br>
-# Install dependencies<br>
+cd RemWasteAutomationAssessment<br>
 npm install
-        </div>
+                </div>
 
-        <h3>6.2 Running Tests</h3>
-        <table>
-            <tr>
-                <th width="30%">Test Type</th>
-                <th width="40%">Command</th>
-                <th width="30%">Description</th>
-            </tr>
-            <tr>
-                <td><strong>UI Tests (Recommended)</strong></td>
-                <td><code>npm run ui:pom</code></td>
-                <td>Runs all UI tests with automated reporting</td>
-            </tr>
-            <tr>
-                <td><strong>API Tests (Recommended)</strong></td>
-                <td><code>npm run api:all</code></td>
-                <td>Runs all API tests with automated reporting</td>
-            </tr>
-            <tr>
-                <td><strong>Complete Test Suite</strong></td>
-                <td><code>npm run test:all</code></td>
-                <td>Runs both UI and API tests sequentially</td>
-            </tr>
-            <tr>
-                <td><strong>Interactive Mode</strong></td>
-                <td><code>npm run ui:open</code></td>
-                <td>Opens Cypress UI for manual test execution</td>
-            </tr>
-            <tr>
-                <td><strong>Cross-Browser Testing</strong></td>
-                <td><code>npm run test:firefox</code></td>
-                <td>Runs tests in different browsers</td>
-            </tr>
-        </table>
-        <h3>6.3 Test Reports</h3>
-        <p>After test execution, comprehensive reports are automatically generated:</p>
-        <ul>
-            <li><strong>HTML Reports:</strong> Located in <code>cypress/reports/</code> directory</li>
-            <li><strong>Screenshots:</strong> Automatically captured for failed tests in <code>cypress/screenshots/</code></li>
-            <li><strong>Videos:</strong> Complete test execution recordings in <code>cypress/videos/</code></li>
-            <li><strong>Auto-open Reports:</strong> Use <code>npm run view-report</code> to automatically open the latest report</li>
-        </ul>
+                <table>
+                    <tr>
+                        <th width="40%">Test Type</th>
+                        <th width="60%">Command</th>
+                    </tr>
+                    <tr>
+                        <td><strong>UI Tests (Recommended)</strong></td>
+                        <td><code>npm run ui:pom</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>API Tests (Recommended)</strong></td>
+                        <td><code>npm run api:all</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complete Test Suite</strong></td>
+                        <td><code>npm run test:all</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interactive Mode</strong></td>
+                        <td><code>npm run ui:open</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cross-Browser Testing</strong></td>
+                        <td><code>npm run test:firefox</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div class="section">
-        <h2>7. Test Data and Configuration</h2>
-        
+        <h2>5. Test Configuration & Data</h2>
         <table>
             <tr>
                 <th width="25%">Component</th>
                 <th width="75%">Configuration</th>
             </tr>
             <tr>
-                <td><strong>Test User Credentials</strong></td>
-                <td>Email: remwaste.x6j6cw@bumpmail.io<br>Password: Test1234!</td>
+                <td><strong>Test Credentials</strong></td>
+                <td>Email: remwaste.x6j6cw@bumpmail.io | Password: Test1234!</td>
             </tr>
             <tr>
                 <td><strong>Browser Support</strong></td>
                 <td>Chrome (primary), Firefox, Microsoft Edge</td>
             </tr>
             <tr>
-                <td><strong>Viewport Testing</strong></td>
+                <td><strong>Responsive Testing</strong></td>
                 <td>Mobile (375x667), Tablet (768x1024), Desktop (1280x720)</td>
             </tr>
             <tr>
-                <td><strong>Test Environment</strong></td>
-                <td>Production-like environment with live API endpoints</td>
+                <td><strong>Generated Reports</strong></td>
+                <td>HTML reports in cypress/reports/, Screenshots in cypress/screenshots/, Videos in cypress/videos/</td>
             </tr>
         </table>
     </div>
-    <div class="section">
-        <h2>8. Assumptions and Limitations</h2>
-        
-        <h3>8.1 Assumptions</h3>
-        <ul>
-            <li>Application is accessible at the configured URL during test execution</li>
-            <li>Test user credentials remain valid and accessible</li>
-            <li>Backend API endpoints maintain consistent response structure</li>
-            <li>Network connectivity is stable during test execution</li>
-        </ul>
 
-        <h3>8.2 Limitations</h3>
-        <ul>
-            <li><strong>Test Data Dependency:</strong> Tests rely on specific test user account and may be affected by data changes</li>
-            <li><strong>Network Dependency:</strong> Tests require internet connectivity to access the hosted application</li>
-            <li><strong>Browser Compatibility:</strong> Primary testing on Chrome; other browsers tested but may have specific limitations</li>
-            <li><strong>Environment Stability:</strong> Test results may be affected by external factors such as server downtime or API changes</li>
-        </ul>
-
-        <h3>8.3 Risk Mitigation</h3>
-        <ul>
-            <li>Implemented retry mechanisms for flaky network operations</li>
-            <li>Added explicit waits and smart element detection</li>
-            <li>Comprehensive error handling and detailed logging</li>
-            <li>Multiple browser support for cross-compatibility verification</li>
-        </ul>
-    </div>
     <div class="section">
-        <h2>9. Success Criteria</h2>
+        <h2>6. Assumptions, Limitations & Success Criteria</h2>
         
-        <div class="highlight-box">
-            <strong>Test Execution Success Criteria:</strong>
-            <ul>
-                <li>All critical path tests (login and basic CRUD operations) pass consistently</li>
-                <li>API tests validate proper request/response handling and error scenarios</li>
-                <li>Security tests confirm protection against common vulnerabilities</li>
-                <li>Cross-browser compatibility verified across primary browsers</li>
-                <li>Responsive design functionality validated across different viewport sizes</li>
-                <li>Test reports generated successfully with clear pass/fail status</li>
-            </ul>
+        <div class="three-column">
+            <div>
+                <h3>6.1 Assumptions</h3>
+                <ul class="compact-list">
+                    <li>Application accessible during test execution</li>
+                    <li>Test credentials remain valid</li>
+                    <li>API endpoints maintain consistent structure</li>
+                    <li>Stable network connectivity</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>6.2 Limitations</h3>
+                <ul class="compact-list">
+                    <li><strong>Test Data Dependency:</strong> Relies on specific test user account</li>
+                    <li><strong>Network Dependency:</strong> Requires internet connectivity</li>
+                    <li><strong>Environment Stability:</strong> External factors may affect results</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>6.3 Success Criteria</h3>
+                <ul class="compact-list">
+                    <li>All critical path tests pass consistently</li>
+                    <li>API tests validate proper request/response handling</li>
+                    <li>Security tests confirm vulnerability protection</li>
+                    <li>Cross-browser compatibility verified</li>
+                    <li>Test reports generated successfully</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <div class="section">
-        <h2>10. Maintenance and Future Enhancements</h2>
+        <h2>7. Risk Mitigation & Future Enhancements</h2>
         
-        <h3>10.1 Maintenance Guidelines</h3>
-        <ul>
-            <li>Regular review of test cases to ensure alignment with application changes</li>
-            <li>Update selectors and API endpoints as application evolves</li>
-            <li>Monitor test execution results and address flaky tests promptly</li>
-            <li>Keep test data current and validate credentials periodically</li>
-        </ul>
-
-        <h3>10.2 Potential Enhancements</h3>
-        <ul>
-            <li>Integration with CI/CD pipeline for automated test execution</li>
-            <li>Addition of performance testing capabilities</li>
-            <li>Implementation of data-driven testing with multiple test datasets</li>
-            <li>Extension to mobile application testing when available</li>
-            <li>Addition of accessibility testing to ensure compliance with WCAG guidelines</li>
-        </ul>
+        <div class="two-column">
+            <div>
+                <h3>7.1 Risk Mitigation Strategies</h3>
+                <ul class="compact-list">
+                    <li>Implemented retry mechanisms for network operations</li>
+                    <li>Added explicit waits and smart element detection</li>
+                    <li>Comprehensive error handling and detailed logging</li>
+                    <li>Multiple browser support for compatibility verification</li>
+                </ul>
+                
+                <h3>7.2 Maintenance Guidelines</h3>
+                <ul class="compact-list">
+                    <li>Regular review of test cases for application alignment</li>
+                    <li>Update selectors and API endpoints as application evolves</li>
+                    <li>Monitor test execution and address flaky tests promptly</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>7.3 Future Enhancements</h3>
+                <ul class="compact-list">
+                    <li>CI/CD pipeline integration for automated execution</li>
+                    <li>Performance testing capabilities addition</li>
+                    <li>Data-driven testing with multiple datasets</li>
+                    <li>Mobile application testing extension</li>
+                    <li>Accessibility testing (WCAG compliance)</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>Framework Highlights:</strong> This automation framework demonstrates industry best practices with POM pattern, comprehensive coverage, professional reporting, maintainable code, security focus, cross-browser support, and CI/CD readiness.
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="footer">
-        <p><strong>Document Information:</strong> RemWaste QA Automation Test Plan v1.0 | Author: Oluwatobi | Date: January 2025</p>
-        <p>This document serves as the comprehensive test strategy for the RemWaste QA Automation Assessment</p>
+        <p><strong>RemWaste QA Automation Test Plan v1.0</strong> | Comprehensive UI and API Test Strategy | Ready for Production Use</p>
     </div>
 </body>
 </html>
