@@ -1,0 +1,81 @@
+{
+  "validUser": {
+    "email": "remwaste.x6j6cw@bumpmail.io",
+    "password": "Test1234!"
+  },
+  
+  "invalidEmails": [
+    "plainaddress",
+    "@missing.com", 
+    "missing@.com",
+    "spaces @domain.com"
+  ],
+  
+  "validEmails": [
+    "test@example.com",
+    "user.name@domain.co.uk",
+    "user+tag@example.org"
+  ],
+  
+  "weakPasswords": [
+    "123",
+    "password", 
+    "12345678",
+    "PASSWORD"
+  ],
+  
+  "sqlInjectionAttempts": [
+    "admin'; DROP TABLE users; --",
+    "' OR '1'='1",
+    "admin'/*",
+    "' UNION SELECT * FROM users --"
+  ],
+  
+  "xssAttempts": [
+    "<script>alert('xss')</script>",
+    "javascript:alert('xss')",
+    "<img src=x onerror=alert('xss')>"
+  ],
+  
+  "pathTraversalAttempts": [
+    "../../../etc/passwd",
+    "..\\..\\..\\windows\\system32"
+  ],
+  
+  "testWasteItems": {
+    "validItem": {
+      "title": "Plastic Bottles",
+      "description": "Collection of plastic water bottles",
+      "location": "Office Kitchen",
+      "weight": "5.5",
+      "status": "pending"
+    },
+    "updateTestItem": {
+      "title": "Electronic Waste",
+      "description": "Old laptops and monitors", 
+      "location": "IT Department",
+      "weight": "25.0",
+      "status": "collected"
+    },
+    "deleteTestItem": {
+      "title": "Paper Waste",
+      "description": "Shredded documents",
+      "location": "Reception",
+      "weight": "10.2",
+      "status": "processed"
+    },
+    "edgeCaseItem": {
+      "title": "Very Long Title That Might Test Field Limits",
+      "description": "A description that is quite long to test how the form handles extended text input in the description field",
+      "location": "Location with special chars: üñíçødé 123!@#",
+      "weight": "999.99",
+      "status": "pending"
+    }
+  },
+  
+  "viewports": {
+    "mobile": { "width": 375, "height": 667 },
+    "tablet": { "width": 768, "height": 1024 },
+    "desktop": { "width": 1280, "height": 720 }
+  }
+}

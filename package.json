@@ -1,0 +1,57 @@
+{
+  "name": "renwasteassesment",
+  "version": "1.0.0",
+  "description": "E2E Testing Suite for RemWaste Application - UI and API Automation",
+  "main": "index.js",
+  "author": "Oluwatobi",
+  "license": "ISC",
+  "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open --e2e --browser chrome",
+    "test:headless": "cypress run --headless",
+    
+    "ui:all": "cypress run --spec \"cypress/e2e/CrudAutomation/*.cy.js\"",
+    "ui:pom": "node runUITests.js",
+    "ui:pom:headed": "node runUITests.js --headed",
+    "ui:open": "cypress open --e2e --browser chrome",
+    "ui:login": "cypress run --spec \"cypress/e2e/CrudAutomation/login-pom.cy.js\"",
+    "ui:dashboard": "cypress run --spec \"cypress/e2e/CrudAutomation/dashboard-pom.cy.js\"",
+    
+    "api:all": "node runAPITests.js",
+    "api:headed": "node runAPITests.js --headed", 
+    "api:health": "cypress run --spec \"cypress/e2e/ApiAutomation/health-pom-api.cy.js\"",
+    "api:auth": "cypress run --spec \"cypress/e2e/ApiAutomation/auth-pom-api.cy.js\"",
+    "api:items": "cypress run --spec \"cypress/e2e/ApiAutomation/items-pom-api.cy.js\"",
+    "api:open": "cypress open --e2e --browser chrome",
+    
+    "test:all": "npm run ui:pom && npm run api:all",
+    "test:report": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=true,json=true",
+    
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    
+    "test:mobile": "cypress run --config viewportWidth=375,viewportHeight=667",
+    "test:tablet": "cypress run --config viewportWidth=768,viewportHeight=1024",
+    "test:desktop": "cypress run --config viewportWidth=1280,viewportHeight=720",
+    
+    "clean": "rimraf cypress/screenshots cypress/videos cypress/reports",
+    "verify": "cypress verify",
+    "view-report": "node viewReport.js --chrome"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.3",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "keywords": [
+    "cypress",
+    "e2e",
+    "testing",
+    "remwaste",
+    "ui-automation",
+    "api-automation",
+    "page-object-model"
+  ]
+}
